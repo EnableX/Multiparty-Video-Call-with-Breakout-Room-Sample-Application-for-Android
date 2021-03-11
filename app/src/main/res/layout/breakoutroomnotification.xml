@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:background="@drawable/icon_background"
+    android:backgroundTint="@color/white"
+    android:padding="10dp">'
+
+    <ImageView
+        android:id="@+id/iconuser"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/singleuser" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/iconuser">
+
+        <TextView
+            android:id="@+id/textviewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:text=" Name " />
+
+        <TextView
+            android:id="@+id/textViewIncomingcall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textviewName"
+            android:layout_marginTop="3dp"
+            android:text="Incoming call... " />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/join_breakoutRoom"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/disconnect_breakoutRoom"
+        android:background="@drawable/join_breakout_room" />
+
+    <ImageButton
+        android:id="@+id/audio_mute_breakoutRoom"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/disconnect_breakoutRoom"
+        android:background="@drawable/unmute"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/disconnect_breakoutRoom"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/disconnect" />
+
+
+</RelativeLayout>
