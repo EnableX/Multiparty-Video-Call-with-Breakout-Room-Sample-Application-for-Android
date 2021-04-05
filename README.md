@@ -1,38 +1,56 @@
-# Multi-Party RTC: A Sample Android App with EnableX Android Toolkit
+# EnableX Multiparty Video Calling with Breakout-room  Android App
 
-This is a Sample Android App demonstrates the use of EnableX (https://www.enablex.io/cpaas/video-api) platform Server APIs and Android Toolkit to build Multi-Party RTC (Real Time Communication) Application.  It allows developers to ramp up on app development by hosting on their own devices. 
-
-This App creates a virtual Room on the fly  hosted on the Enablex platform using REST calls and uses the Room credentials (i.e. Room Id) to connect to the virtual Room as a mobile client.  The same Room credentials can be shared with others to join the same virtual Room to carry out a RTC session. 
-
-> EnableX Developer Center: https://developer.enablex.io/
+This is a sample video calling app that uses EnableX infrastructure, APIs and Toolkit. It allows developers to try out real-time video and audio features on android.
 
 
-## 1. How to get started
+This sample apps allows you to easily:
+* Create a Virtual Room with REST video API 
+* Gain the Room Credential (i.e. Room ID) 
+* Join Virtual Room either as moderator or partipicant securely
+
+You will also enjoy the following features: 
+* Mute/Unmute Video
+* Mute/Unmute Audio
+* Record Session
+* ActiveTalker 
+* Breakout room 
+
+
+> For more information, pls visit our Developer Center https://developer.enablex.io/
+
+
+
+## 1. Get started
 
 ### 1.1 Pre-Requisites
 
 #### 1.1.1 App Id and App Key 
 
-* Register with EnableX [https://portal.enablex.io/cpaas/trial-sign-up/] 
-* Login to the EnableX Portal
-* Create your Application Key
+You would need API Credential to access EnableX platform. To do that, simply create an account with us. It’s absolutely free!
+
+* Create an account with EnableX - https://portal.enablex.io/cpaas/trial-sign-up/
+* Create your Project
 * Get your App ID and App Key delivered to your Email
 
 
 #### 1.1.2 Sample Android Client 
 
-* Clone or download this Repository [https://github.com/EnableX/Multiparty-Video-Chat-Application-Sample-for-Android.git] 
+* Clone or download this Repository [https://github.com/EnableX/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.git] 
 
 
 #### 1.1.3 Test Application Server 
 
-You need to setup an Application Server to provision Web Service API for your Android Application to communicate enabling Video Session. 
+An Application Server is required for your android App to communicate with EnableX. We have different variant of Application Server Sample Code, pick one in your preferred language and follow instructions given in README.md file of respective Repository.
 
-To help you to try our Android Application quickly, without having to setup Applciation Server, this Application is shipped pre-configured to work in a "try" mode with EnableX hosted Application Server i.e. https://demo.enablex.io. 
+* NodeJS: https://github.com/EnableX/Video-Conferencing-Open-Source-Web-Application-Sample.git 
+* PHP: https://github.com/EnableX/Group-Video-Call-Conferencing-Sample-Application-in-PHP
 
-Our Application Server restricts a single Session Duation to 10 minutes, and allows 1 moderator and note more than 3 Participant in a Session.
+Note the following:
+•    You need to use App ID and App Key to run this Service.
+•    Your android Client End Point needs to connect to this Service to create Virtual Room and Create Token to join session.
+•    Application Server is created using [EnableX Server API] (https://developer.enablex.io/video-api/server-api/), a Rest API Service helps in provisioning, session access and post-session reporting.
 
-Once you tried EnableX Android Sample Application, you may need to setup your own  Application Server and verify your Application to work with your Application Server.  More on this, read Point 2 later in the Document.
+If you would like to test the quality of EnableX video call before setting up your own application server,  you may run the test on our pre-configured environment. Please refer to section 2 for details.
 
 
 
@@ -68,22 +86,20 @@ Once you tried EnableX Android Sample Application, you may need to setup your ow
 Note: Only one user with Moderator Role allowed to connect to a Virtual Room while trying with EnableX Hosted Service. Your Own Application Server may allow upto 5 Moderators. 
   
 Note:- If you used any emulator/simulator your local stream will not create. It will create only on real device.
+
+
+## 2. Testing Environment
+
+If you would like to test the quality of EnableX video call before setting up your own application server,  you may run the test on our pre-configured environment.https://try.enablex.io/
+In this environment, you will only be able to:
+
+* Conduct a single session with a total duration of no more than 10 minutes
+* Host a multiparty call with no more than 3 participants 
+
+> More information on Testing Environment: https://developer.enablex.io/video/sample-code/#demo-app-server
+
+Once you have tested them, it is important that you set up your own Application Server to continue building a multiparty android video calling app. Refer to section 1.1.3 on how to set up the application server. 
   
-## 2 Setup Your Own Application Server
-
-You may need to setup your own Application Server after you tried the Sample Application with EnableX hosted Server. We have differnt variant of Appliciation Server Sample Code, pick one in your preferred language and follow instructions given in respective README.md file.
-
-* NodeJS: [https://github.com/EnableX/Video-Conferencing-Open-Source-Web-Application-Sample]
-* PHP: [https://github.com/EnableX/Group-Video-Call-Conferencing-Sample-Application-in-PHP]
-
-Note the following:
-* You need to use App ID and App Key to run this Service.
-* Your Android Client End Point needs to connect to this Service to create Virtual Room and Create Token to join session.
-* Application Server is created using EnableX Server API, a Rest API Service helps in provisioning, session access and pos-session reporting.  
-
-To know more about Server API, go to:
-https://developer.enablex.io/video-api/server-api/
-
 
 ## 3 Android Toolkit
 
@@ -92,12 +108,17 @@ This Sample Applcation uses EnableX Android Toolkit to communicate with EnableX 
 * Documentation: https://developer.enablex.io/video-api/client-api/android-toolkit/
 * Download Toolkit: https://developer.enablex.io/video/downloads/#android-toolkit
 
+## Exploring the Breakout Room
+To know more about breakout room implementation, refer our API Documentation at 
 
-## 4 Trial
+https://developer.enablex.io/video-api/client-api/android-toolkit/advance-features/#breakout-room
 
-EnableX provides hosted Vemo Application of different use-case for you to try out.
+## 4. Support
 
-Try a quick Video Call: https://demo.enablex.io/
+EnableX provides a library of Documentations, How-to Guides and Sample Codes to help software developers get started. 
 
-Sign up for a free trial https://portal.enablex.io/cpaas/trial-sign-up/
+> Go to https://developer.enablex.io/. 
+
+You may also write to us for additional support at support@enablex.io.   
+
 
