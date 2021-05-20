@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GitHubProjects.iml" filepath="$PROJECT_DIR$/.idea/modules/GitHubProjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Enx-Rtc-Android-1.9.5 2/GitHubProjects.Enx-Rtc-Android-1.9.5_2.iml" filepath="$PROJECT_DIR$/.idea/modules/Enx-Rtc-Android-1.9.5 2/GitHubProjects.Enx-Rtc-Android-1.9.5_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GitHubProjects.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GitHubProjects.app.iml" />
     </modules>
   </component>
 </project>
