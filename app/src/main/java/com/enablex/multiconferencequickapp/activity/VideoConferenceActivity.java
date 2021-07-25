@@ -1024,6 +1024,26 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     }
 
     @Override
+    public void onAckAddSpotlightUsers(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onAckRemoveSpotlightUsers(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onUpdateSpotlightUsers(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onRoomBandwidthAlert(JSONObject jsonObject) {
+
+    }
+
+    @Override
     public void onAckCreateBreakOutRoom(JSONObject jsonObject) {
         try {
 
