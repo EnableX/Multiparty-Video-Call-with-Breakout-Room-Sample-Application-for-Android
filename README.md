@@ -119,6 +119,6 @@ EnableX provides a library of Documentations, How-to Guides and Sample Codes to 
 
 > Go to https://developer.enablex.io/. 
 
-You may also write to us for additional support at support@enablex.io.   
+You may also write to us for additional support at support@enablex.io.
 
 
