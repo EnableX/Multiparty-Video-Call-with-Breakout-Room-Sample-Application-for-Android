@@ -13,8 +13,8 @@ public class WebConstants {
     /*The following information required, Only when kTry = true, When you hosted your own webservice remove these fileds*/
 
     /*Use enablex portal to create your app and get these following credentials*/
-        public static final String kAppId = "APP-Id";
-        public static final String kAppkey = "APP-KEY";
+        public static final String kAppId = "60ffb1c23494a67df74a7c78";
+        public static final String kAppkey = "ugyYahe8aQyVaAayetyuezyjuSuLypaPaYe2";
 
 
          public static final String getRoomId = "createRoom/";

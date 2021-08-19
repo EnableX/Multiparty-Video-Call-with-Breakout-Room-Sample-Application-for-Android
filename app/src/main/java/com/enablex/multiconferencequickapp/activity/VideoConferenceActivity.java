@@ -300,7 +300,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                         jsonObject.put("video", false);
                         jsonObject.put("canvas", false);
                         jsonObject.put("share", false);
-                        jsonObject.put("max_rooms", 2);
+                        jsonObject.put("max_rooms", 1);
                         enxRooms.createBreakOutRoom(jsonObject);
                     } catch (Exception e) {
                         e.printStackTrace();
