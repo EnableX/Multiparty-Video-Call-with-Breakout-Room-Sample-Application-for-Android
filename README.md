@@ -1,124 +1,144 @@
-# EnableX Multiparty Video Calling with Breakout-room  Android App
+# Multiparty Video Call using Java and Airtel IQ for Android 
 
-This is a sample video calling app that uses EnableX infrastructure, APIs and Toolkit. It allows developers to try out real-time video and audio features on android.
+This client application written in Java demonstrates how you can implement multiparty video calling capabilities in your mobile applications using Airtel IQ Toolkit. The application runs on an Android device and utilizes Airtel IQ Android SDK to conduct an RTC session. The sequential tasks performed by the client application to conduct an RTC session are as given below:  
 
+* Fetch token from the application server. 
+* Connect to the room using the received token. 
+* Publish media streams in the room. 
+* Subscribe to remote media streams in the room. 
+* Observe and handle session-related events. 
 
-This sample apps allows you to easily:
-* Create a Virtual Room with REST video API 
-* Gain the Room Credential (i.e. Room ID) 
-* Join Virtual Room either as moderator or partipicant securely
+The sample application demonstrates the following advance features along with basic video call: 
 
-You will also enjoy the following features: 
-* Mute/Unmute Video
-* Mute/Unmute Audio
-* Record Session
-* ActiveTalker 
-* Breakout room 
+* Mute/Unmute audio. 
+* Mute/Unmute video. 
+* Switch Camera (front or rear). 
+* Switch to Speaker. 
+* Disconnect. 
 
-
-> For more information, pls visit our Developer Center https://developer.enablex.io/
-
-
-
-## 1. Get started
+ ## 1. Get started
 
 ### 1.1 Pre-Requisites
 
-#### 1.1.1 App Id and App Key 
+#### 1.1.1 Authorization Credentials 
 
-You would need API Credential to access EnableX platform. To do that, simply create an account with us. It’s absolutely free!
+Follow the steps given below to generate API Credentials required to access Airtel IQ: 
 
-* Create an account with EnableX - https://portal.enablex.io/cpaas/trial-sign-up/
-* Create your Project
-* Get your App ID and App Key delivered to your Email
+* Create a free account on Airtel IQ 
+* Create your Project 
+* Get the App ID and App Key generated against the Project. 
 
+ 
 
-#### 1.1.2 Sample Android Client 
+#### 1.1.2 Requirement: 
 
-* Clone or download this Repository [https://github.com/EnableX/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.git] 
-
-
-#### 1.1.3 Test Application Server 
-
-An Application Server is required for your android App to communicate with EnableX. We have different variant of Application Server Sample Code, pick one in your preferred language and follow instructions given in README.md file of respective Repository.
-
-* NodeJS: https://github.com/EnableX/Video-Conferencing-Open-Source-Web-Application-Sample.git 
-* PHP: https://github.com/EnableX/Group-Video-Call-Conferencing-Sample-Application-in-PHP
-
-Note the following:
-•    You need to use App ID and App Key to run this Service.
-•    Your android Client End Point needs to connect to this Service to create Virtual Room and Create Token to join session.
-•    Application Server is created using [EnableX Server API] (https://developer.enablex.io/video-api/server-api/), a Rest API Service helps in provisioning, session access and post-session reporting.
-
-If you would like to test the quality of EnableX video call before setting up your own application server,  you may run the test on our pre-configured environment. Please refer to section 2 for details.
+* An Android Device to test the sample application as a simulator/emulator does not support playing video or publishing a local Stream. 
+* Install/update Android Studio – 6.0 or higher 
 
 
-
-#### 1.1.4 Configure Android Client 
+#### 1.1.3 Configure Android Client  
 
 * Open the App
 * Go to WebConstants and change the following:
 ``` 
-    /* To try the App with Enablex Hosted Service you need to set the kTry = true When you setup your own Application Service, set kTry = false */
+    /* To try the App with Airtel IQ Hosted Service you need to set the kTry = true, when you setup your own Application Service, set kTry = false */
         
         public  static  final  boolean kTry = true;
         
-    /* Your Web Service Host URL. Keet the defined host when kTry = true */
+    /* Your Web Service Host URL.  The following host is applicable when kTry = true */
     
-        String kBaseURL = "https://demo.enablex.io/"
+        String kBaseURL = "https://demo.Airtel IQ.io/"
         
-    /* Your Application Credential required to try with EnableX Hosted Service
-        When you setup your own Application Service, remove these */
+    /* Your Application Credentials are required to try with Airtel IQ Hosted Service. You can remove these when you setup your own Application Service */
         
         String kAppId = ""  
         String kAppkey = ""  
  ```
 
 
+
+
+#### 1.1.4 Sample application server
+
+Once you have downloaded the client code, you need to download the server code to provision video room on Airtel IQ server. Use any of the Repositories listed below to setup your application server: 
+
+* Laravel 
+* PHP 
+* Nodejs 
+* Python 
+* C# 
+
+Clone or download a repository of your choice and configure the server as per the instructions given in the respective README document.  
+
+To directly try the sample code without having to configure an application server, you can also use the Airtel IQ test server as explained in section 2. However, it is recommended to configure your own application server to build a multiparty video calling web app. 
+
+ 
 ### 1.2 Test
 
-#### 1.2.1 Open the App
+* Open the App in your device.  
+* A Form to enter the Name and Room ID opens. 
+* Create a Room by clicking on “Create Room” button. 
+* Use the Room ID to enter the Room as a Moderator or a Participant and share the Room ID with others who want to join the RTC session in the Room. 
+* You are now in a video call with others, who have joined the same room. 
 
-* Open the App in your Device. You get a form to enter Credentials i.e. Name & Room Id.
-* You need to create a Room by clicking the "Create Room" button.
-* Once the Room Id is created, you can use it and share with others to connect to the Virtual Room to carry out a RTC Session either as a Moderator or a Participant (Choose applicable Role in the Form).
+Note: This sample application creates a virtual room with limited Participants and 1 Moderator for demonstration purposes. ## 2. Testing Environment
 
-Note: Only one user with Moderator Role allowed to connect to a Virtual Room while trying with EnableX Hosted Service. Your Own Application Server may allow upto 5 Moderators. 
+
+## 2. Pre-configured Test Server 
+
+As mentioned in section 1.1.4 above, you have an option to run your client application on Airtel IQ pre-configured environment instead of setting up your own application server.  
+
+This allows you to quickly test the performance of Airtel IQ video calls before getting into the development of your application.  
+
+As the Airtel IQ test server has been configured for demonstration purpose only, it only allows to: 
+
+* Conduct a single session with a duration lesser than 10 minutes. 
+* Host a multiparty call with less than 3 participants. 
+
+Refer to the Demo App Server for more information.   
+
+Once you have successfully tested your application on the test server, you can set up your application server as explained in section 1.1.4 above. 
   
-Note:- If you used any emulator/simulator your local stream will not create. It will create only on real device.
 
+## 3. Know more about Client API 
 
-## 2. Testing Environment
+The client APIs are called from the Airtel IQ Android SDK (Enx-Rtc-Android.aar) which runs in the client application. The client APIs are used to communicate with the Airtel IQ video services and monitor the client-side state of the RTC session.  
 
-If you would like to test the quality of EnableX video call before setting up your own application server,  you may run the test on our pre-configured environment.https://try.enablex.io/
-In this environment, you will only be able to:
+The client APIs are typically used to: 
 
-* Conduct a single session with a total duration of no more than 10 minutes
-* Host a multiparty call with no more than 3 participants 
+* Connect to the desired room using the token received from the application server 
+* Manage local audio and video 
+* Handle room and stream related events initiated by the user 
 
-> More information on Testing Environment: https://developer.enablex.io/video/sample-code/#demo-app-server
+The client APIs handle four major entities: 
 
-Once you have tested them, it is important that you set up your own Application Server to continue building a multiparty android video calling app. Refer to section 1.1.3 on how to set up the application server. 
-  
+* Airtel IQ Room: It handles room/session related events like connection, local stream publication, and remote stream subscription. 
+* Airtel IQ Stream: It identifies audio/video/data stream published by the user. 
+* Events: It represents the events related to the room and the stream. 
+* Player: It represents the customizable UI element used to render the audio/video stream in the DOM. 
 
-## 3 Android Toolkit
+In addition to the features demonstrated in this sample program, the SDK has many helpful APIs available for the developers to utilize like: 
 
-This Sample Applcation uses EnableX Android Toolkit to communicate with EnableX Servers to initiate and manage Real Time Communications. You might need to update your Application with latest version of EnableX Android Toolkit time as and when a new release is avaialble.   
+* Text chat 
+* Session recording  
+* File sharing 
+* Screen sharing 
+* Streaming 
+* Annotation 
+* Canvas 
 
-* Documentation: https://developer.enablex.io/video-api/client-api/android-toolkit/
-* Download Toolkit: https://developer.enablex.io/video/downloads/#android-toolkit
+And many more such exciting features. 
 
-## Exploring the Breakout Room
-To know more about breakout room implementation, refer our API Documentation at 
+Read Android Toolkit Documentation for more details.  
 
-https://developer.enablex.io/video-api/client-api/android-toolkit/advance-features/#breakout-room
+Download Android Toolkit to get the latest version of Android SDK. 
 
-## 4. Support
+ ## 4. Support
+ 
+Airtel IQ provides a library of Documentations, How-to Guides, and Sample Codes to help software developers, interested in embedding RTC in their applications. 
 
-EnableX provides a library of Documentations, How-to Guides and Sample Codes to help software developers get started. 
+Refer to the Complete Developer’s Guide for more details. 
 
-> Go to https://developer.enablex.io/. 
-
-You may also write to us for additional support at support@enablex.io.   
+You may also write to us for additional support at support@Airtel IQ.io.    
 
 
