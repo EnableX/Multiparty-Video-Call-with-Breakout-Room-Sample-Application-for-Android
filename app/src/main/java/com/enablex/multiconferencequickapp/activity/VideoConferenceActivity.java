@@ -103,7 +103,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
             android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
             android.Manifest.permission.RECORD_AUDIO
     };
-
+    boolean isFrontCamera = true;
     private JSONArray breakoutRoomsArray;
     View breakoutRoomView;
     EnxRoom breakoutRoom;
@@ -711,8 +711,21 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                 }
                 break;
             case R.id.camera:
-                localStream.switchCamera();
-                camera.setImageResource(R.drawable.camera);
+                if (localStream != null) {
+                    if (!isVideoMuted) {
+                        if (isFrontCamera) {
+                            localStream.switchCamera();
+                            camera.setImageResource(R.drawable.rear_camera);
+                            isFrontCamera = false;
+                        } else {
+                            localStream.switchCamera();
+                            camera.setImageResource(R.drawable.front_camera);
+                            isFrontCamera = true;
+                        }
+                    }else{
+                        Toast.makeText(VideoConferenceActivity.this,"Please turn on the video to switch camera",Toast.LENGTH_LONG).show();
+                    }
+                }
                 break;
             case R.id.volume:
                 if (enxRooms != null) {
@@ -1155,8 +1168,9 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
         }
     }
 
+
     @Override
-    public void onUserJoinedBreakoutRoom(JSONObject jsonObject) {
+    public void onUserJoinedBreakoutRoom(EnxRoom enxRoom, JSONObject jsonObject) {
 
     }
 
@@ -1192,8 +1206,34 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
         }
     }
 
+
     @Override
-    public void onUserDisconnectedFromBreakoutRoom(JSONObject jsonObject) {
+    public void onUserDisconnectedFromBreakoutRoom(EnxRoom enxRoom, JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onAckRejectBreakOutRoom(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onBreakoutRoomCreated(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onBreakoutRoomInvited(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onBreakoutRoomInviteRejected(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onBreakoutroomjoining(JSONObject jsonObject) {
 
     }
 }
