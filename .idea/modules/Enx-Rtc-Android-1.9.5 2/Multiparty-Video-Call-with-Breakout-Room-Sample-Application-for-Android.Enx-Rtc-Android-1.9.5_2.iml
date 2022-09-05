@@ -10,7 +10,6 @@
     </facet>
     <facet type="java-gradle" name="Java-Gradle">
       <configuration>
-        <option name="BUILD_FOLDER_PATH" value="$MODULE_DIR$/../../../Enx-Rtc-Android-1.9.5 2/build" />
         <option name="BUILDABLE" value="false" />
       </configuration>
     </facet>

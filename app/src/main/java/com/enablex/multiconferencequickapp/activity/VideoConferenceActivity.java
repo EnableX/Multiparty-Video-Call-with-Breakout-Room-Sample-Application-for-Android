@@ -382,7 +382,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
         if (enxRooms != null) {
             enxRooms.publish(localStream);
             enxRooms.setReconnectObserver(this);
-            enxRoom.setActiveTalkerViewObserver(this::onActiveTalkerList);
+            enxRoom.setActiveTalkerViewObserver(this::onActiveTalkerView);
             enxRoom.setBreakoutRoomObserver(this);
 
             try {
@@ -462,7 +462,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     }
 
     @Override
-    public void onActiveTalkerList(RecyclerView recyclerView) {
+    public void onActiveTalkerView(RecyclerView recyclerView) {
 
         mRecyclerView = recyclerView;
         if (recyclerView == null) {
@@ -544,6 +544,11 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     @Override
     public void onUserDataReceived(JSONObject jsonObject) {
 // received when custom data received at room
+    }
+
+    @Override
+    public void onUserStartTyping(boolean b) {
+
     }
 
     @Override
@@ -1057,6 +1062,26 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     }
 
     @Override
+    public void onStopAllSharingACK(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onACKStartLiveTranscription(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onACKStopLiveTranscription(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onTranscriptionEvents(JSONObject jsonObject) {
+
+    }
+
+    @Override
     public void onAckCreateBreakOutRoom(JSONObject jsonObject) {
         try {
 
@@ -1115,25 +1140,6 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
         }
     }
 
-    @Override
-    public void onAckPause(JSONObject jsonObject) {
-
-    }
-
-    @Override
-    public void onAckResume(JSONObject jsonObject) {
-
-    }
-
-    @Override
-    public void onAckMuteRoom(JSONObject jsonObject) {
-
-    }
-
-    @Override
-    public void onAckUnmuteRoom(JSONObject jsonObject) {
-
-    }
 
     @Override
     public void onFailedJoinBreakOutRoom(JSONObject jsonObject) {

@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.iml" filepath="$PROJECT_DIR$/.idea/modules/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Enx-Rtc-Android-1.9.5 2/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.Enx-Rtc-Android-1.9.5_2.iml" filepath="$PROJECT_DIR$/.idea/modules/Enx-Rtc-Android-1.9.5 2/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.Enx-Rtc-Android-1.9.5_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Multiparty-Video-Call-with-Breakout-Room-Sample-Application-for-Android.app.unitTest.iml" />
     </modules>
   </component>
 </project>
