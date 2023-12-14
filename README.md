@@ -1,24 +1,23 @@
-# EnableX Multiparty Video Calling with Breakout-room  Android App
+# EnableX Multiparty Video Calling Android App: Breakout Rooms, API Integration, and Testing Guide
+
+EnableX Multiparty Video Calling with Breakout-room Android App
 
 This is a sample video calling app that uses EnableX infrastructure, APIs and Toolkit. It allows developers to try out real-time video and audio features on android.
 
-
 This sample apps allows you to easily:
-* Create a Virtual Room with REST video API 
-* Gain the Room Credential (i.e. Room ID) 
-* Join Virtual Room either as moderator or partipicant securely
 
-You will also enjoy the following features: 
-* Mute/Unmute Video
-* Mute/Unmute Audio
-* Record Session
-* ActiveTalker 
-* Breakout room 
+Create a Virtual Room with REST video API
+Gain the Room Credential (i.e. Room ID)
+Join Virtual Room either as moderator or partipicant securely
+You will also enjoy the following features:
 
+Mute/Unmute Video
+Mute/Unmute Audio
+Record Session
+ActiveTalker
+Breakout room
 
 > For more information, pls visit our Developer Center https://developer.enablex.io/
-
-
 
 ## 1. Get started
 
