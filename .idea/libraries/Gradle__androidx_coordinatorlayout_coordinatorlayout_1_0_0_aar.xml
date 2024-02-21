@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar">
+  <library name="Gradle: androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar" external-system-id="GRADLE">
     <ANNOTATIONS>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5f1414b854a699ca50f5583d93600df7/transformed/coordinatorlayout-1.0.0/annotations.zip!/" />
     </ANNOTATIONS>
