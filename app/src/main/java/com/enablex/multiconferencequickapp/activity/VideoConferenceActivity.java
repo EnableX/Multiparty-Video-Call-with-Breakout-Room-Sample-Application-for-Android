@@ -99,8 +99,6 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
 
     String[] PERMISSIONS = {
             android.Manifest.permission.CAMERA,
-            android.Manifest.permission.READ_EXTERNAL_STORAGE,
-            android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
             android.Manifest.permission.RECORD_AUDIO
     };
     boolean isFrontCamera = true;
@@ -521,6 +519,11 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     }
 
     @Override
+    public void onAvailable(Integer integer) {
+
+    }
+
+    @Override
     public void onEventError(JSONObject jsonObject) {
 //received when any error occurred for any room event
         Toast.makeText(VideoConferenceActivity.this, jsonObject.optString("msg"), Toast.LENGTH_SHORT).show();
@@ -557,15 +560,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
 
     }
 
-    @Override
-    public void onSwitchedUserRole(JSONObject jsonObject) {
-// received when user switch their role (from moderator  to participant)
-    }
 
-    @Override
-    public void onUserRoleChanged(JSONObject jsonObject) {
-// received when user role changed successfully
-    }
 
     @Override
     public void onConferencessExtended(JSONObject jsonObject) {
@@ -866,8 +861,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
             case 1:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
                         && grantResults[1] == PackageManager.PERMISSION_GRANTED
-                        && grantResults[2] == PackageManager.PERMISSION_GRANTED
-                        && grantResults[3] == PackageManager.PERMISSION_GRANTED) {
+                       ) {
                     initialize();
                 } else {
                     Toast.makeText(this, "Please enable permissions to further proceed.", Toast.LENGTH_SHORT).show();

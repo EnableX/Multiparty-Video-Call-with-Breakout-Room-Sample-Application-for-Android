@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdk 31
+    compileSdk 34
     defaultConfig {
         applicationId 'com.enablex.multipartyquickapp'
         minSdkVersion 24
-        targetSdk 31
+        targetSdk 34
         versionCode 1
         versionName "1.1"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -45,4 +45,5 @@ dependencies {
     }
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.8.0" // or the latest version
 }

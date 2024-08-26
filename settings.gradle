@@ -1,2 +1,2 @@
-include ':Enx-Rtc-Android-1.9.5 2'
+
 include ':app'
