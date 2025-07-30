@@ -12,7 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.enablex.multiconferencequickapp.R;
+
+import com.enablex.multipartyquickapp.R;
 
 import java.util.List;
 
@@ -64,10 +65,11 @@ public class BreakoutRoomAdapter extends RecyclerView.Adapter<BreakoutRoomAdapte
 
         @Override
         public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.llItem:
+            if(view.getId()== R.id.llItem){
+
+
                     roomItemClickListener.onRoomItemClick(getLayoutPosition(),mOption);
-                    break;
+
             }
 
         }

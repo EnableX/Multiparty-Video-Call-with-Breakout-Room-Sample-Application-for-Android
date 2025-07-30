@@ -13,8 +13,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.enablex.multiconferencequickapp.R;
 import com.enablex.multiconferencequickapp.model.UserListModels;
+import com.enablex.multipartyquickapp.R;
 
 import java.util.ArrayList;
 
@@ -87,10 +87,11 @@ public class ParticipantListAdapter extends RecyclerView.Adapter<ParticipantList
 
         @Override
         public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.inviteBreakoutRoom:
+            int id=view.getId();
+            if(id== R.id.inviteBreakoutRoom){
+
                     clickListener.onToggleClick(getLayoutPosition(), inviteBreakoutRoomIV.isChecked());
-                    break;
+
             }
         }
     }

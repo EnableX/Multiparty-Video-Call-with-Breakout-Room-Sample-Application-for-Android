@@ -36,7 +36,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.enablex.multiconferencequickapp.R;
 import com.enablex.multiconferencequickapp.adapter.BottomAdapter;
 import com.enablex.multiconferencequickapp.adapter.BreakoutRoomAdapter;
 import com.enablex.multiconferencequickapp.adapter.HorizontalViewAdapter;
@@ -44,6 +43,7 @@ import com.enablex.multiconferencequickapp.model.HorizontalViewModel;
 import com.enablex.multiconferencequickapp.model.UserListModels;
 import com.enablex.multiconferencequickapp.model.UserModel;
 import com.enablex.multiconferencequickapp.utilities.OnDragTouchListener;
+import com.enablex.multipartyquickapp.R;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -549,6 +549,31 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
 // received when chat data received at room
     }
 
+    @Override
+    public void onACKSendMessage(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onMessageDelete(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onACKDeleteMessage(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onMessageUpdate(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onACKUpdateMessage(JSONObject jsonObject) {
+
+    }
+
 
     @Override
     public void onUserDataReceived(JSONObject jsonObject) {
@@ -556,9 +581,10 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     }
 
     @Override
-    public void onUserStartTyping(boolean b) {
+    public void onUserStartTyping(JSONObject jsonObject) {
 
     }
+
 
 
 
@@ -685,9 +711,9 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
             popupWindow.dismiss();
             return;
         }
+        int id=view.getId();
+        if(id== R.id.disconnect){
 
-        switch (view.getId()) {
-            case R.id.disconnect:
                 if (enxRooms != null) {
                     if (enxPlayerView != null) {
                         enxPlayerView.release();
@@ -697,62 +723,64 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                 } else {
                     finish();
                 }
-                break;
-            case R.id.mute:
-                if (localStream != null) {
-                    if (!isAudioMuted) {
-                        localStream.muteSelfAudio(true);
+                }
+
+       else if(id== R.id.mute) {
+            if (localStream != null) {
+                if (!isAudioMuted) {
+                    localStream.muteSelfAudio(true);
+                } else {
+                    localStream.muteSelfAudio(false);
+                }
+            }
+        }
+
+      else  if(id== R.id.video) {
+            if (localStream != null) {
+                if (!isVideoMuted) {
+                    localStream.muteSelfVideo(true);
+                } else {
+                    localStream.muteSelfVideo(false);
+                }
+            }
+        }
+       else if(id== R.id.camera) {
+            if (localStream != null) {
+                if (!isVideoMuted) {
+                    if (isFrontCamera) {
+                        localStream.switchCamera();
+                        camera.setImageResource(R.drawable.rear_camera);
+                        isFrontCamera = false;
                     } else {
-                        localStream.muteSelfAudio(false);
+                        localStream.switchCamera();
+                        camera.setImageResource(R.drawable.front_camera);
+                        isFrontCamera = true;
                     }
+                } else {
+                    Toast.makeText(VideoConferenceActivity.this, "Please turn on the video to switch camera", Toast.LENGTH_LONG).show();
                 }
-                break;
-            case R.id.video:
-                if (localStream != null) {
-                    if (!isVideoMuted) {
-                        localStream.muteSelfVideo(true);
-                    } else {
-                        localStream.muteSelfVideo(false);
-                    }
-                }
-                break;
-            case R.id.camera:
-                if (localStream != null) {
-                    if (!isVideoMuted) {
-                        if (isFrontCamera) {
-                            localStream.switchCamera();
-                            camera.setImageResource(R.drawable.rear_camera);
-                            isFrontCamera = false;
-                        } else {
-                            localStream.switchCamera();
-                            camera.setImageResource(R.drawable.front_camera);
-                            isFrontCamera = true;
-                        }
-                    }else{
-                        Toast.makeText(VideoConferenceActivity.this,"Please turn on the video to switch camera",Toast.LENGTH_LONG).show();
-                    }
-                }
-                break;
-            case R.id.volume:
-                if (enxRooms != null) {
-                    showRadioButtonDialog();
-                }
-                break;
-            case R.id.more_items:
-                showMoreItems();
-                break;
-            case R.id.join_breakoutRoom:
-                if (invitationBreakoutRoomId != null)
-                    joinBreakoutRoom(invitationBreakoutRoomId);
-                break;
-            case R.id.audio_mute_breakoutRoom:
-                audioMuteBreakoutRoom();
-                break;
-            case R.id.disconnect_breakoutRoom:
-                disconnectBreakoutRoom();
-                break;
-            default:
-                break;
+            }
+        }
+
+       else if(id== R.id.volume) {
+            if (enxRooms != null) {
+                showRadioButtonDialog();
+            }
+        }
+       else if(id== R.id.more_items) {
+            showMoreItems();
+        }
+      else  if(id== R.id.join_breakoutRoom) {
+            if (invitationBreakoutRoomId != null)
+                joinBreakoutRoom(invitationBreakoutRoomId);
+        }
+      else  if(id== R.id.audio_mute_breakoutRoom) {
+            audioMuteBreakoutRoom();
+        }
+       else if(id== R.id.disconnect_breakoutRoom) {
+            disconnectBreakoutRoom();
+
+
         }
     }
 

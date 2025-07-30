@@ -15,9 +15,9 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.enablex.multiconferencequickapp.R;
 import com.enablex.multiconferencequickapp.adapter.ParticipantListAdapter;
 import com.enablex.multiconferencequickapp.model.UserListModels;
+import com.enablex.multipartyquickapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,13 +112,14 @@ public class ParticipantsScreen extends AppCompatActivity implements  Participan
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_invite_room:
+        int id=item.getItemId();
+        if(id== R.id.action_invite_room){
+
                 sendParticipants("InvitedUser");
                 return true;
-            default:
-                return super.onOptionsItemSelected(item);
+
         }
+        return false;
     }
 
 
